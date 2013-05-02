@@ -1,0 +1,83 @@
+/* ********* */
+/* VARIABLES */
+/* ********* */
+@slider-width: 1200px;
+@slider-height: 700px;
+@slider-background-color: #ccc;
+@slider-border-color: #fff;
+@slider-shadow-color: #666;
+@slider-radius: 0px;
+
+@images-margin: 100px;
+@images-shadow-color: #666;
+
+@start-stop-button-background-color: #bbb;
+@start-stop-button-text-color: #666;
+@start-stop-button-text-color-hover: #888;
+@start-stop-button-shadow-color: #888;
+
+
+/* ********** */
+/* MAIN STYLE */
+/* ********** */
+#yep-content {
+  position: relative;
+  z-index: 1;
+  width: @slider-width;
+  height: @slider-height;
+  overflow: hidden;
+  margin: 0 auto;
+  background: @slider-background-color;
+  border: 1px solid @slider-border-color;
+  box-shadow: inset 0 0 3px @slider-shadow-color;
+  border-radius: @slider-radius;
+
+  #yep-slider {
+    position: absolute;
+    z-index: 2;
+    left: @images-margin;
+    width: 1000000px;
+    margin: 25px 0;
+
+    img {
+      float: left;
+      margin: 0 0 0 @images-margin;
+      box-shadow: 0 1px 5px @images-shadow-color;
+      
+      &[class*="yep"] { cursor: pointer; }
+    }
+  }
+
+  #yep-button {
+    position: absolute;
+    width: 50px;
+    padding: 10px;
+    bottom: 20px;
+    left: (@slider-width/2) - 25px - 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em;
+    color: @start-stop-button-text-color;
+    background: @start-stop-button-background-color;
+    border-radius: 7px;
+    box-shadow: 0 2px 2px @start-stop-button-shadow-color;
+
+    &:hover { 
+      background: lighten(@start-stop-button-background-color, 5%); 
+      color: @start-stop-button-text-color-hover;
+    }
+
+    &:active { 
+      box-shadow: 0 1px 2px @start-stop-button-shadow-color; 
+    }
+  }
+
+  #yep-help {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    font-size: 0.7em;
+    color: #555;
+  }
+}

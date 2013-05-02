@@ -2,14 +2,17 @@ var self = null;
 var interval = null;
 
 /**
- * YepSlider
+ * YepSlider v0.1.1
  * @constructor
+ * @param {number} duration duration (ms) of the slide animation
+ * @param {boolean} autoplay start automatically ?
+ * @param {number} waiting_time time (ms) between photos in autoplay mode
  */
-function YepSlider(root_element, duration, autoplay, waiting_time) {
+function YepSlider(duration, autoplay, waiting_time) {
+  // Keep the reference (when we are in a jQuery handler)
   self = this;
-
   // Slider root element
-  self.root_element = root_element;
+  self.root_element = $('#yep-slider');
   // Images
   self.elements = self.getImg();
   // Yep button
@@ -122,7 +125,7 @@ YepSlider.prototype.autoPlay = function(event) {
 
       // Else, back to the start
       } else {
-        $(self.root_element).animate({left: '50px'});
+        self.root_element.animate({left: self.root_element.find('img:first-child').css('margin-left')});
         self.defineLeftAndRight(self.root_element.find('img:first-child')[0]);
       }
 

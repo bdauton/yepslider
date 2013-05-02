@@ -7,37 +7,32 @@
   <title>YepSlider</title>
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet/less" type="text/css" href="css/yepslider-0.1.1.less" />
   <link rel="stylesheet/less" type="text/css" href="css/common.less" />
 
   <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="js/less-1.3.3.min.js" type="text/javascript"></script>
-  <script src="js/yepslider-0.1.0.js"></script>
+  <script src="js/yepslider-0.1.1.js"></script>
 </head>
 <body>
   <header>
     YepSlider
   </header>
 
-  <div id="content">
-    <div id="slider">
+  <div id="yep-content">
+    <div id="yep-slider">
       <img src="img/slider_img/holy_burger.jpg" alt="holy_burger" />
       <img src="img/slider_img/ants.jpg" alt="ant" />
       <img src="img/slider_img/dirty_motorbike.jpg" alt="dirty_motorbike" />
       <img src="img/slider_img/fat_dog.jpg" alt="fat_dog" />
       <img src="img/slider_img/kitten.jpg" alt="kitten" />
     </div>
-
     <span id="yep-button"></span>
     <span id="yep-help">Click on the next photo &uarr;</span>
     <script>
-      var slider = new YepSlider(
-        $('#slider'), // root element
-        250, // duration of the sliiiide
-        true, // start automatically ?
-        3000 // seconds between photos in autoplay mode
-      );
+      var slider = new YepSlider(250, true, 3000);
     </script>
   </div>
+
 </body>
 </html>
